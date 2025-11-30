@@ -1,70 +1,239 @@
-# Getting Started with Create React App
+# 🧮 Aljabar Linear Solver (ALS)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<div align="center">
 
-## Available Scripts
+![React](https://img.shields.io/badge/React-18.x-61DAFB?style=for-the-badge&logo=react&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![Vercel](https://img.shields.io/badge/Vercel-Deployed-000000?style=for-the-badge&logo=vercel&logoColor=white)
 
-In the project directory, you can run:
+**Solver & Calculator Aljabar Linear dengan Langkah-Langkah Detail**
 
-### `npm start`
+[🚀 Live Demo](https://als-84.vercel.app) · [📖 Report Bug](https://github.com/Kaioryo/ALS/issues) · [✨ Request Feature](https://github.com/Kaioryo/ALS/issues)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+</div>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## 📖 Tentang Proyek
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**Aljabar Linear Solver (ALS)** adalah aplikasi web interaktif yang dirancang untuk membantu mahasiswa dan pelajar memahami konsep-konsep aljabar linear melalui **solver otomatis dengan langkah-langkah detail**. Aplikasi ini menyediakan berbagai tools untuk menyelesaikan masalah aljabar linear, dari sistem persamaan linear hingga diagonalisasi matriks.
 
-### `npm run build`
+### 🎯 Tujuan
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Menyediakan solver aljabar linear yang **mudah digunakan**
+- Menampilkan **proses penyelesaian step-by-step**
+- Mendukung pembelajaran mandiri dengan **materi PDF terintegrasi**
+- Memberikan pengalaman UI/UX yang **modern dan responsif**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## ✨ Fitur Utama
 
-### `npm run eject`
+### 🔢 Computational Tools
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+| Fitur | Deskripsi |
+|-------|-----------|
+| **📐 Gram-Schmidt Process** | Ubah basis menjadi basis ortonormal dengan HKD kustom (Euclid/Weighted) |
+| **🔢 SPL & Matrix Solver** | Selesaikan SPL dengan Gauss, Gauss-Jordan, hitung determinan, rank, dan invers |
+| **📊 Inner Product & HKD** | Hitung hasil kali dalam, norm, jarak, proyeksi, dan cek ortogonalitas |
+| **🎯 Projection & Least Squares** | Hitung proyeksi ortogonal dan solusi least squares Ax ≈ b |
+| **🧩 Subspace Analysis** | Cek independensi linear, basis, dan dimensi subspace |
+| **🧬 Eigenvalue & Eigenvector** | Hitung nilai eigen dan vektor eigen untuk matriks 2×2 dan 3×3 |
+| **♦️ Diagonalization** | Cari matriks P dan D sehingga A = PDP⁻¹ |
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 📚 Learning Materials
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- **Materi PDF Interaktif**: Akses slide kuliah per pertemuan dengan viewer bawaan
+- **Step-by-Step Solutions**: Setiap solver menampilkan langkah penyelesaian detail
+- **Responsive Design**: Optimized untuk desktop, tablet, dan mobile
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
+## 🚀 Demo
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+🌐 **Live Application**: [https://als-84.vercel.app](https://als-84.vercel.app)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Fitur-Fitur Interface
 
-### Code Splitting
+- **Navigation Bar** dengan akses cepat ke semua tools
+- **Home Page** dengan menu tool dalam bentuk card
+- **Input Form** yang intuitif dengan kontrol dimensi dan mode
+- **Output Display** dengan hasil perhitungan dan langkah-langkah
+- **PDF Viewer** terintegrasi untuk akses materi pembelajaran
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+---
 
-### Analyzing the Bundle Size
+## 🛠️ Tech Stack
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Frontend
 
-### Making a Progressive Web App
+- **React 18** - UI Library
+- **React Router v6** - Client-side routing
+- **@react-pdf-viewer** - PDF rendering
+- **pdfjs-dist** - PDF processing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Styling
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- **CSS3** - Custom styling dengan variabel CSS
+- **Responsive Design** - Mobile-first approach
 
 ### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- **Vercel** - Hosting dan continuous deployment
 
-### `npm run build` fails to minify
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 📦 Installation
+
+### Prerequisites
+
+- Node.js >= 14.x
+- npm atau yarn
+
+### Clone Repository
+
+```bash
+git clone https://github.com/Kaioryo/ALS.git
+cd ALS
+```
+
+### Install Dependencies
+
+```bash
+npm install
+# atau
+yarn install
+```
+
+### Run Development Server
+
+```bash
+npm start
+# atau
+yarn start
+```
+
+Aplikasi akan berjalan di `http://localhost:3000`
+
+### Build untuk Production
+
+```bash
+npm run build
+# atau
+yarn build
+```
+
+---
+
+## 📁 Struktur Proyek
+
+```
+ALS/
+├── public/
+│   ├── pdf/                 # Folder berisi file PDF materi
+│   └── index.html
+├── src/
+│   ├── components/
+│   │   └── Navbar.js       # Navigation bar
+│   ├── pages/
+│   │   ├── HomePage.js     # Landing page dengan menu
+│   │   ├── SPLSolverPage.js
+│   │   ├── GramSchmidtPage.js
+│   │   ├── InnerProductPage.js
+│   │   ├── ProjectionPage.js
+│   │   ├── SubspacePage.js
+│   │   ├── EigenPage.js
+│   │   ├── DiagonalizationPage.js
+│   │   ├── MateriPDFPage.js
+│   │   └── PDFViewerPage.js
+│   ├── data/
+│   │   └── materiData.js   # Data materi PDF
+│   ├── utils/              # Helper functions & algorithms
+│   ├── App.js
+│   ├── App.css
+│   └── index.js
+├── package.json
+└── README.md
+```
+
+---
+
+## 🎓 Cara Penggunaan
+
+### 1️⃣ Pilih Tool yang Diinginkan
+
+Dari halaman utama, klik salah satu card untuk mengakses solver:
+- Gram-Schmidt Process
+- SPL & Matrix Solver
+- Inner Product & HKD
+- Projection & Least Squares
+- Subspace Analysis
+- Eigenvalue & Eigenvector
+- Diagonalization
+
+### 2️⃣ Input Data
+
+- Atur **dimensi** atau **ukuran matriks** sesuai kebutuhan
+- Masukkan **nilai-nilai** pada input field yang tersedia
+- Pilih **mode** atau **metode** jika tersedia
+
+### 3️⃣ Hitung Solusi
+
+Klik tombol **Hitung** atau **Solve** untuk mendapatkan hasil dengan langkah-langkah detail
+
+### 4️⃣ Akses Materi Pembelajaran
+
+Klik menu **Materi PDF** untuk mengakses slide kuliah per pertemuan
+
+---
+
+## 🤝 Contributing
+
+Kontribusi sangat diterima! Jika kamu ingin berkontribusi:
+
+1. **Fork** repository ini
+2. **Create** branch fitur baru (`git checkout -b feature/AmazingFeature`)
+3. **Commit** perubahan (`git commit -m 'Add some AmazingFeature'`)
+4. **Push** ke branch (`git push origin feature/AmazingFeature`)
+5. Buka **Pull Request**
+
+---
+
+## 🐛 Known Issues
+
+- [ ] Matriks besar (>5×5) mungkin lambat pada komputasi kompleks
+- [ ] PDF viewer mungkin memerlukan beberapa saat untuk loading pertama kali
+
+---
+
+## 📝 License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+---
+
+## 👨‍💻 Author
+
+**Kaioryo**
+
+- GitHub: [@Kaioryo](https://github.com/Kaioryo)
+- Project Link: [https://github.com/Kaioryo/ALS](https://github.com/Kaioryo/ALS)
+
+---
+
+## 🙏 Acknowledgments
+
+- Slide kuliah dari **Program Studi S1 Matematika FMIPA Unpad**
+- Dosen pengampu: Dr. Edi Kurniadi, M.Si., Ph.D., Dr. Sisilia Sylviani, M.Si., Dr. Anita Triska, M.Si.
+- Inspirasi UI/UX dari berbagai educational platform
+- Icons dari emoji dan Unicode characters
+
+---
+
+<div align="center">
+
+**⭐ Star repo ini jika bermanfaat!**
+
+Made with 💜 for Aljabar Linear learners
+
+</div>
