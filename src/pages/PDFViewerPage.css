@@ -72,7 +72,7 @@
 .pdfviewer-container {
   flex: 1;
   min-height: 0;
-  border-radius: 10px;
+  border-radius: 12px;
   overflow: hidden;
   background: var(--bg-secondary);
   box-shadow: var(--shadow-md);
@@ -133,25 +133,86 @@
   height: 100%;
 }
 
-/* hilangkan scroll berlebih, biar rasanya kayak slide */
+/* tengahkan halaman */
 .pdfviewer-frame .rpv-core__inner-page {
   margin: 0 auto;
 }
 
 @media (max-width: 768px) {
   .pdfviewer-page {
-    padding: 1.25rem 0.75rem 1.25rem;
+    padding: 1.1rem 0.6rem 1.2rem;
+    gap: 0.6rem;
   }
 
-  .pdfviewer-meta h1 {
-    font-size: 1.05rem;
-  }
-
-  .pdfviewer-toolbar {
+  .pdfviewer-header {
     gap: 0.5rem;
   }
 
-  .pdfviewer-page-info {
+  .pdfviewer-back {
+    padding: 0.4rem 0.8rem;
     font-size: 0.8rem;
+  }
+
+  .pdfviewer-meta h1 {
+    font-size: 1rem;
+  }
+
+  .pdfviewer-meta p {
+    font-size: 0.8rem;
+  }
+
+  .pdfviewer-download {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+  }
+
+  .pdfviewer-toolbar {
+    padding: 0.4rem 0.5rem;
+    gap: 0.4rem;
+  }
+
+  .pdfviewer-nav-btn {
+    flex: 1;
+    padding: 0.35rem 0.6rem;
+    font-size: 0.8rem;
+    text-align: center;
+  }
+
+  .pdfviewer-page-info {
+    font-size: 0.75rem;
+  }
+
+  .pdfviewer-container {
+    border-radius: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .pdfviewer-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .pdfviewer-meta {
+    text-align: left;
+  }
+
+  .pdfviewer-download {
+    align-self: flex-end;
+  }
+
+  .pdfviewer-toolbar {
+    flex-wrap: wrap;
+  }
+
+  .pdfviewer-page-info {
+    width: 100%;
+    text-align: center;
+    order: -1;
+    margin-bottom: 0.15rem;
+  }
+
+  .pdfviewer-nav-btn {
+    max-width: 48%;
   }
 }
