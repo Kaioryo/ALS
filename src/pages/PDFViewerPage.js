@@ -1,8 +1,16 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { Worker, Viewer, SpecialZoomLevel } from '@react-pdf-viewer/core';
+import {
+  Worker,
+  Viewer,
+  SpecialZoomLevel,
+} from '@react-pdf-viewer/core';
+import {
+  pageNavigationPlugin,
+} from '@react-pdf-viewer/page-navigation';
 import materiList from '../data/materiData';
 import '@react-pdf-viewer/core/lib/styles/index.css';
+import '@react-pdf-viewer/page-navigation/lib/styles/index.css';
 import './PDFViewerPage.css';
 
 function PDFViewerPage() {
@@ -14,7 +22,9 @@ function PDFViewerPage() {
 
   const [currentPage, setCurrentPage] = useState(0); // 0-based
   const [totalPages, setTotalPages] = useState(0);
-  const viewerRef = useRef(null);
+
+  const pageNavigationPluginInstance = pageNavigationPlugin();
+  const { jumpToNextPage, jumpToPreviousPage } = pageNavigationPluginInstance;
 
   if (!item) {
     return (
@@ -34,27 +44,13 @@ function PDFViewerPage() {
   const fileUrl = `${basePath}/pdf/${encodeURIComponent(item.filename)}`;
 
   const handleDocumentLoaded = (e) => {
-    setTotalPages(e.doc.numPages || 0);
+    const pages = e.doc.numPages || 0;
+    setTotalPages(pages);
     setCurrentPage(0);
   };
 
-  const goToPage = (pageIndex) => {
-    if (!viewerRef.current) return;
-    if (pageIndex < 0 || pageIndex >= totalPages) return;
-
-    const { jumpToPage } = viewerRef.current;
-    if (jumpToPage) {
-      jumpToPage(pageIndex);
-      setCurrentPage(pageIndex);
-    }
-  };
-
-  const handlePrev = () => {
-    goToPage(currentPage - 1);
-  };
-
-  const handleNext = () => {
-    goToPage(currentPage + 1);
+  const handlePageChange = (e) => {
+    setCurrentPage(e.currentPage);
   };
 
   return (
@@ -80,7 +76,7 @@ function PDFViewerPage() {
         <div className="pdfviewer-toolbar">
           <button
             className="pdfviewer-nav-btn"
-            onClick={handlePrev}
+            onClick={jumpToPreviousPage}
             disabled={currentPage <= 0}
           >
             ‹ Prev
@@ -92,7 +88,7 @@ function PDFViewerPage() {
 
           <button
             className="pdfviewer-nav-btn"
-            onClick={handleNext}
+            onClick={jumpToNextPage}
             disabled={totalPages === 0 || currentPage >= totalPages - 1}
           >
             Next ›
@@ -103,9 +99,10 @@ function PDFViewerPage() {
           <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.min.js">
             <Viewer
               fileUrl={fileUrl}
+              plugins={[pageNavigationPluginInstance]}
               defaultScale={SpecialZoomLevel.PageFit}
               onDocumentLoad={handleDocumentLoaded}
-              ref={viewerRef}
+              onPageChange={handlePageChange}
             />
           </Worker>
         </div>
