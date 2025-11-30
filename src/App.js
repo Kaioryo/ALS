@@ -1,24 +1,38 @@
-import logo from './logo.svg';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { AppProvider } from './context/AppContext';
+import Navbar from './components/Navbar';
+import HomePage from './pages/HomePage';
+import GramSchmidtPage from './pages/GramSchmidtPage';
+import SPLSolverPage from './pages/SPLSolverPage';
+import InnerProductPage from './pages/InnerProductPage';
+import ProjectionPage from './pages/ProjectionPage';
+import SubspacePage from './pages/SubspacePage';
+import EigenPage from './pages/EigenPage';
+import DiagonalizationPage from './pages/DiagonalizationPage';
+import MateriPDFPage from './pages/MateriPDFPage';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AppProvider>
+      <Router>
+        <div className="App">
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/gram-schmidt" element={<GramSchmidtPage />} />
+            <Route path="/spl-solver" element={<SPLSolverPage />} />
+            <Route path="/inner-product" element={<InnerProductPage />} />
+            <Route path="/projection" element={<ProjectionPage />} />
+            <Route path="/subspace" element={<SubspacePage />} />
+            <Route path="/eigen" element={<EigenPage />} />
+            <Route path="/diagonalization" element={<DiagonalizationPage />} />
+            <Route path="/materi" element={<MateriPDFPage />} />
+          </Routes>
+        </div>
+      </Router>
+    </AppProvider>
   );
 }
 

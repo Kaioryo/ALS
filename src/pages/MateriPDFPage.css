@@ -1,0 +1,100 @@
+.materi-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 2.5rem;
+}
+
+.materi-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.materi-header h1 {
+  font-size: 2.1rem;
+  color: #4b5bdc;
+  margin-bottom: 0.4rem;
+}
+
+.materi-header p {
+  color: var(--text-secondary);
+  font-size: 0.98rem;
+}
+
+.materi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1.4rem;
+}
+
+.materi-card {
+  background: var(--bg-secondary);
+  border-radius: 16px;
+  padding: 1.2rem 1.3rem 1.3rem;
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.materi-icon {
+  font-size: 1.7rem;
+  margin-bottom: 0.6rem;
+}
+
+.materi-card h3 {
+  font-size: 1.05rem;
+  color: #6e82d0;
+  margin-bottom: 0.35rem;
+}
+
+.materi-topic {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.materi-actions {
+  margin-top: auto;
+  display: flex;
+  gap: 0.6rem;
+}
+
+.materi-btn {
+  flex: 1;
+  padding: 0.45rem 0.4rem;
+  border-radius: 999px;
+  border: 1px solid #d0d6ff;
+  background: #f4f6ff;
+  color: #4b5bdc;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.1s ease, box-shadow 0.15s ease;
+}
+
+.materi-btn.primary {
+  background: linear-gradient(90deg, #5b6df8, #9b4dff);
+  border: none;
+  color: #ffffff;
+  box-shadow: 0 6px 14px rgba(87, 111, 255, 0.35);
+}
+
+.materi-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(51, 71, 133, 0.16);
+}
+
+.materi-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 8px rgba(51, 71, 133, 0.16);
+}
+
+@media (max-width: 600px) {
+  .materi-page {
+    padding: 1.5rem 1rem 2rem;
+  }
+
+  .materi-header h1 {
+    font-size: 1.7rem;
+  }
+}

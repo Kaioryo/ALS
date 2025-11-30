@@ -1,0 +1,221 @@
+.navbar {
+  width: 100%;
+  background: var(--navbar-gradient);
+  color: #fff;
+  padding: 0.6rem 1.8rem;
+  box-sizing: border-box;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Kiri: brand + burger */
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.navbar-brand {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+/* Tengah: desktop links */
+.navbar-links-desktop {
+  display: flex;
+  align-items: center;
+  gap: 1.3rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.navbar-links-desktop a {
+  color: #f5f7ff;
+  text-decoration: none;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.navbar-links-desktop a:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.navbar-links-desktop .active {
+  font-weight: 600;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.9);
+  padding-bottom: 2px;
+}
+
+/* Kanan: icon buttons */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+/* Round icon button (language + theme) */
+.navbar-icon-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+}
+
+.navbar-icon-btn:hover {
+  background: rgba(255, 255, 255, 0.28);
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+}
+
+.navbar-icon-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+}
+
+/* Burger */
+.navbar-burger {
+  display: none; /* only mobile */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 28px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.navbar-burger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background-color: #ffffff;
+  margin: 3px 0;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+/* X icon */
+.navbar-burger.is-active span:nth-child(1) {
+  transform: translateY(5px) rotate(45deg);
+}
+
+.navbar-burger.is-active span:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar-burger.is-active span:nth-child(3) {
+  transform: translateY(-5px) rotate(-45deg);
+}
+
+/* Drawer overlay (backdrop) */
+.nav-drawer-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.25);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 998;
+  transition: opacity 0.2s ease;
+}
+
+.nav-drawer-backdrop.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Drawer container: slide dari kiri */
+.nav-drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 260px;
+  max-width: 80%;
+  background: linear-gradient(180deg, #5b6df8, #9b4dff);
+  color: #fff;
+  transform: translateX(-100%);
+  transition: transform 0.25s ease-out;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-drawer.open {
+  transform: translateX(0);
+}
+
+.nav-drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.8rem 1.2rem;
+}
+
+.nav-drawer-title {
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.nav-drawer-divider {
+  height: 2px;
+  background: rgba(255, 255, 255, 0.85);
+  margin: 0 0 0.5rem;
+}
+
+.nav-drawer-links {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem 1.2rem 1.2rem;
+  gap: 0.9rem;
+  font-size: 1rem;
+}
+
+.nav-drawer-links a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.nav-drawer-links a.active {
+  font-weight: 600;
+}
+
+/* Responsif */
+@media (max-width: 900px) {
+  .navbar {
+    padding: 0.6rem 1.2rem;
+  }
+
+  .navbar-links-desktop {
+    display: none; /* sembunyikan link baris di mobile */
+  }
+
+  .navbar-burger {
+    display: flex; /* burger muncul */
+  }
+
+  .navbar-brand {
+    font-size: 1rem;
+  }
+}
