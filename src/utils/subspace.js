@@ -1,5 +1,4 @@
-import { Fraction } from './Fraction';
-import { toFractionMatrix, cloneMatrix, gaussJordan } from './rowEchelon';
+import { gaussJordan } from './rowEchelon';
 
 // Parse input string ke number (mendukung "a/b")
 export function parseScalar(val) {

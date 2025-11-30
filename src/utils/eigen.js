@@ -1,5 +1,4 @@
-import { Fraction } from './Fraction';
-import { toFractionMatrix, cloneMatrix, gaussJordan, identityMatrix } from './rowEchelon';
+import { toFractionMatrix, gaussJordan } from './rowEchelon';
 
 // Konversi number-matrix ke Fraction-matrix (ulang di sini untuk kemandirian)
 function toFrac(mat) {
