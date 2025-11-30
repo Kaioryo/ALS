@@ -31,7 +31,7 @@ function PDFViewerPage() {
       <div className="pdfviewer-page">
         <div className="pdfviewer-header">
           <button className="pdfviewer-back" onClick={() => navigate('/materi')}>
-            ← Kembali ke daftar materi
+            Kembali ke daftar materi
           </button>
         </div>
         <p style={{ textAlign: 'center', marginTop: '2rem' }}>
@@ -57,7 +57,7 @@ function PDFViewerPage() {
     <div className="pdfviewer-page">
       <div className="pdfviewer-header">
         <button className="pdfviewer-back" onClick={() => navigate('/materi')}>
-          ← Kembali
+          Kembali
         </button>
         <div className="pdfviewer-meta">
           <h1>{item.title}</h1>
