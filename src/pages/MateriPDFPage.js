@@ -1,13 +1,14 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './MateriPDFPage.css';
 import materiList from '../data/materiData';
 
 function MateriPDFPage() {
   const basePath = process.env.PUBLIC_URL || '';
+  const navigate = useNavigate();
 
-  const handleOpenNewTab = (filename) => {
-    const url = `${basePath}/pdf/${encodeURIComponent(filename)}`;
-    window.open(url, '_blank', 'noopener,noreferrer');
+  const handleOpenViewer = (id) => {
+    navigate(`/materi/${id}`);
   };
 
   const handleDownload = (filename) => {
@@ -37,7 +38,7 @@ function MateriPDFPage() {
             <div className="materi-actions">
               <button
                 className="materi-btn primary"
-                onClick={() => handleOpenNewTab(item.filename)}
+                onClick={() => handleOpenViewer(item.id)}
               >
                 Lihat
               </button>

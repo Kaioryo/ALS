@@ -1,0 +1,95 @@
+.pdfviewer-page {
+  height: calc(100vh - 70px); /* kira-kira tinggi minus navbar */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.pdfviewer-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.pdfviewer-back {
+  border: none;
+  border-radius: 999px;
+  padding: 0.45rem 0.9rem;
+  background: #eef0ff;
+  color: #4b5bdc;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(79, 99, 255, 0.18);
+  transition: background 0.15s ease, transform 0.1s ease, box-shadow 0.15s ease;
+}
+
+.pdfviewer-back:hover {
+  background: #e0e4ff;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(79, 99, 255, 0.25);
+}
+
+.pdfviewer-meta {
+  flex: 1;
+  min-width: 0;
+}
+
+.pdfviewer-meta h1 {
+  font-size: 1.2rem;
+  color: #4b5bdc;
+  margin: 0;
+}
+
+.pdfviewer-meta p {
+  margin: 0.15rem 0 0;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.pdfviewer-download {
+  border-radius: 999px;
+  padding: 0.45rem 0.9rem;
+  background: linear-gradient(90deg, #5b6df8, #9b4dff);
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-decoration: none;
+  box-shadow: 0 6px 14px rgba(87, 111, 255, 0.35);
+  transition: transform 0.1s ease, box-shadow 0.15s ease, opacity 0.1s ease;
+}
+
+.pdfviewer-download:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(87, 111, 255, 0.45);
+}
+
+.pdfviewer-container {
+  flex: 1;
+  min-height: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--bg-secondary);
+  box-shadow: var(--shadow-md);
+}
+
+/* Plugin react-pdf-viewer biasanya sudah mengatur isi internal, 
+   jadi cukup pastikan tinggi kontainernya full */
+.pdfviewer-container .rpv-core__viewer {
+  height: 100%;
+}
+
+@media (max-width: 768px) {
+  .pdfviewer-page {
+    padding: 1.25rem 0.75rem 1.25rem;
+  }
+
+  .pdfviewer-meta h1 {
+    font-size: 1.05rem;
+  }
+}

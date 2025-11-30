@@ -11,6 +11,7 @@ import SubspacePage from './pages/SubspacePage';
 import EigenPage from './pages/EigenPage';
 import DiagonalizationPage from './pages/DiagonalizationPage';
 import MateriPDFPage from './pages/MateriPDFPage';
+import PDFViewerPage from './pages/PDFViewerPage';
 import './App.css';
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
             <Route path="/eigen" element={<EigenPage />} />
             <Route path="/diagonalization" element={<DiagonalizationPage />} />
             <Route path="/materi" element={<MateriPDFPage />} />
+            <Route path="/materi/:id" element={<PDFViewerPage />} />
           </Routes>
         </div>
       </Router>
