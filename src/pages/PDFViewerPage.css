@@ -1,5 +1,5 @@
 .pdfviewer-page {
-  height: calc(100vh - 70px); /* kira-kira tinggi minus navbar */
+  height: calc(100vh - 70px);
   max-width: 1200px;
   margin: 0 auto;
   padding: 1.5rem 1rem 1.5rem;
@@ -76,12 +76,66 @@
   overflow: hidden;
   background: var(--bg-secondary);
   box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
 }
 
-/* Plugin react-pdf-viewer biasanya sudah mengatur isi internal, 
-   jadi cukup pastikan tinggi kontainernya full */
-.pdfviewer-container .rpv-core__viewer {
+/* toolbar di atas halaman */
+.pdfviewer-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(0, 0, 0, 0.03);
+}
+
+.pdfviewer-nav-btn {
+  border-radius: 999px;
+  border: none;
+  padding: 0.4rem 0.9rem;
+  background: #eef0ff;
+  color: #4b5bdc;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.1s ease, box-shadow 0.15s ease,
+    opacity 0.1s ease;
+  box-shadow: 0 4px 10px rgba(79, 99, 255, 0.18);
+}
+
+.pdfviewer-nav-btn:hover:not(:disabled) {
+  background: #e0e4ff;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(79, 99, 255, 0.25);
+}
+
+.pdfviewer-nav-btn:disabled {
+  opacity: 0.5;
+  cursor: default;
+  box-shadow: none;
+}
+
+.pdfviewer-page-info {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+/* area frame viewer */
+.pdfviewer-frame {
+  flex: 1;
+  min-height: 0;
+}
+
+/* tinggi viewer full frame */
+.pdfviewer-frame .rpv-core__viewer {
   height: 100%;
+}
+
+/* hilangkan scroll berlebih, biar rasanya kayak slide */
+.pdfviewer-frame .rpv-core__inner-page {
+  margin: 0 auto;
 }
 
 @media (max-width: 768px) {
@@ -91,5 +145,13 @@
 
   .pdfviewer-meta h1 {
     font-size: 1.05rem;
+  }
+
+  .pdfviewer-toolbar {
+    gap: 0.5rem;
+  }
+
+  .pdfviewer-page-info {
+    font-size: 0.8rem;
   }
 }
