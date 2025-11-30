@@ -34,7 +34,7 @@
 | Fitur | Deskripsi |
 |-------|-----------|
 | **📐 Gram-Schmidt Process** | Ubah basis menjadi basis ortonormal dengan HKD kustom (Euclid/Weighted) |
-| **🔢 SPL & Matrix Solver** | Selesaikan SPL dengan Gauss, Gauss-Jordan, hitung determinan, rank, dan invers |
+| **🔢 SPL & Matrix Solver** | Operasi Baris Elementer (OBE) dengan langkah detail |
 | **📊 Inner Product & HKD** | Hitung hasil kali dalam, norm, jarak, proyeksi, dan cek ortogonalitas |
 | **🎯 Projection & Least Squares** | Hitung proyeksi ortogonal dan solusi least squares Ax ≈ b |
 | **🧩 Subspace Analysis** | Cek independensi linear, basis, dan dimensi subspace |
